@@ -1,0 +1,10 @@
+.carditem {
+  div {
+    width: 502px;
+    height: 182px;
+    background-color: #fff;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
