@@ -1,10 +1,25 @@
-.carditem {
-  div {
-    width: 502px;
-    height: 182px;
-    background-color: #fff;
-  }
+.infoMessage {
+  width: 100%;
+  background-color: #fff;
+  height: 180px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  @media (max-width: 320px) {
+    width: 310px;
+    font-size: 10px;
+  }
+}
+
+.stillTickets {
+  width: 502px;
+  background-color: #2196f3;
+  color: #fff;
+  height: 50px;
+  border-radius: 4px;
+  font-weight: 500;
+  @media (max-width: 320px) {
+    width: 310px;
+  }
 }

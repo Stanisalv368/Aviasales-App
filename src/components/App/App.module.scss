@@ -1,7 +1,9 @@
 .container {
   width: 960px;
   margin: 0 auto;
-  border: 1px solid;
+  @media (max-width: 320px) {
+    width: 310px;
+  }
 }
 
 .logoBox {
@@ -9,16 +11,25 @@
   width: 80px;
   height: 80px;
   background-image: url(../../img/Logo.svg);
+  @media (max-width: 320px) {
+    display: none;
+  }
 }
 
 .main {
   display: flex;
   gap: 20px;
   justify-content: center;
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
 }
 
 .cardlist {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (max-width: 320px) {
+    gap: 5px;
+  }
 }
