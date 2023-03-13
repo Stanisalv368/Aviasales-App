@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 
-import { useAppSelector } from "../../hooks";
+import { useAppSelector, useAppDispatch } from "../../hooks";
 import FilterTransfer from "../FilterTransfer/FilterTransfer";
 import FilterPrice from "../FilterPrice/FilterPrice";
 import CardList from "../CardList/CardList";
@@ -11,7 +10,7 @@ import classes from "./App.module.scss";
 
 const App = () => {
   const { searchID, search, tickets, reloadSearch } = useAppSelector((state) => state.Tickets);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchSearchID());

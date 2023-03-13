@@ -28,3 +28,8 @@ export type FilterType = {
   threeTransfer: boolean;
   sortPrice: boolean;
 };
+
+export type GetTicketsType = {
+  stop: boolean;
+  tickets: Array<TicketsType>;
+};

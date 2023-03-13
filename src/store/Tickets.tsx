@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import type { AnyAction } from "@reduxjs/toolkit";
 
-import { InitialState } from "../Types";
+import { InitialState, GetTicketsType } from "../Types";
 
 const URL = "https://aviasales-test-api.kata.academy";
 
@@ -10,14 +11,17 @@ export const fetchSearchID = createAsyncThunk("tickets/fetchSearchID", async fun
   return data.searchId;
 });
 
-export const fetchGetTicket = createAsyncThunk("tickets/fetchGetTicket", async function (value, { rejectWithValue }) {
-  const res = await fetch(`${URL}/tickets?searchId=${value}`);
+export const fetchGetTicket = createAsyncThunk<GetTicketsType, string>(
+  "tickets/fetchGetTicket",
+  async function (value, { rejectWithValue }) {
+    const res = await fetch(`${URL}/tickets?searchId=${value}`);
 
-  if (!res.ok) {
-    return rejectWithValue("error");
+    if (!res.ok) {
+      return rejectWithValue("error");
+    }
+    return await res.json();
   }
-  return await res.json();
-});
+);
 
 const initialState: InitialState = {
   tickets: [],
@@ -49,7 +53,7 @@ const TicketSlice = createSlice({
   },
 });
 
-function isError(action: any) {
+function isError(action: AnyAction) {
   return action.type.endsWith("rejected");
 }
 
