@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useAppSelector, useAppDispatch } from "../../hooks";
-import { sortPriceOn } from "../../store/FilterSlice";
+import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
+import { sortPriceOn, sortTime } from "../../store/FilterSlice";
 
 import classes from "./FilterPrice.module.scss";
 
@@ -12,12 +12,13 @@ const FilterPrice = () => {
   const clazz = [classes.button, sortPrice && classes.active].join(" ");
   return (
     <div>
-      <button className={clazz} onClick={() => dispatch(sortPriceOn())}>
+      <button type="button" className={clazz} onClick={() => dispatch(sortPriceOn())}>
         самый дешевый
       </button>
       <button
+        type="button"
         className={[classes.button, !sortPrice && classes.active].join(" ")}
-        onClick={() => dispatch(sortPriceOn())}
+        onClick={() => dispatch(sortTime())}
       >
         самый быстрый
       </button>

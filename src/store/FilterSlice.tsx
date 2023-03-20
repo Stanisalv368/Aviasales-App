@@ -74,10 +74,14 @@ const FilterSlice = createSlice({
       }
     },
     sortPriceOn(state) {
-      state.sortPrice = !state.sortPrice;
+      if (!state.sortPrice) state.sortPrice = !state.sortPrice;
+    },
+
+    sortTime(state) {
+      if (state.sortPrice) state.sortPrice = !state.sortPrice;
     },
   },
 });
 
-export const { checkAll, checkNon, checkOne, checkThree, checkTwo, sortPriceOn } = FilterSlice.actions;
+export const { checkAll, checkNon, checkOne, checkThree, checkTwo, sortPriceOn, sortTime } = FilterSlice.actions;
 export default FilterSlice.reducer;

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useAppSelector, useAppDispatch } from "../../hooks";
+import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import FilterTransfer from "../FilterTransfer/FilterTransfer";
 import FilterPrice from "../FilterPrice/FilterPrice";
 import CardList from "../CardList/CardList";
@@ -27,10 +27,10 @@ const App = () => {
       <div className={classes.logoBox}></div>
       <div className={classes.main}>
         <FilterTransfer />
-        <div className={classes.cardlist}>
+        <ul className={classes.cardlist}>
           <FilterPrice />
           <CardList />
-        </div>
+        </ul>
       </div>
     </div>
   );

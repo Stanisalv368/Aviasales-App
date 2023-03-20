@@ -1,7 +1,7 @@
 import React from "react";
 import { Spin } from "antd";
 
-import { useAppSelector, useAppDispatch } from "../../hooks";
+import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import { checkAll, checkNon, checkOne, checkThree, checkTwo } from "../../store/FilterSlice";
 
 import classes from "./FilterTransfer.module.scss";

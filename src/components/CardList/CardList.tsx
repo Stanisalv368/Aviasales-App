@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { v4 } from "uuid";
 
-import { useAppSelector } from "../../hooks";
+import { useAppSelector } from "../../hooks/hooks";
 import { TicketsType } from "../../Types";
 import CardItem from "../CardItem/CardItem";
 import classes from "../CardList/CardList.module.scss";
@@ -39,7 +39,7 @@ const CardList = () => {
         return <CardItem key={v4()} {...ticket} />;
       })}
       {ticketList.length > 0 && (
-        <button className={classes.stillTickets} onClick={() => setlistLenght(listLenght + 5)}>
+        <button type="button" className={classes.stillTickets} onClick={() => setlistLenght(listLenght + 5)}>
           еще 5 билетов
         </button>
       )}
