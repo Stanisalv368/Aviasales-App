@@ -1,1 +1,1 @@
-https://aviasales-app-zeta-five.vercel.app/
+https://aviasales-app-stanisalv368.vercel.app/
